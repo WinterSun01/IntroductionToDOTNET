@@ -6,7 +6,7 @@ class Program
     {
         //ввод значения для вычисления факториала
         Console.Write("Введите число для вычисления его факториала: ");
-        int factorialInput = int.Parse(Console.ReadLine());
+        int factorialInput = Convert.ToInt32(Console.ReadLine());
 
         Console.WriteLine("Факториал " + factorialInput + ": " + Factorial(factorialInput));
 
@@ -19,7 +19,7 @@ class Program
 
         //ввод предела для ряда Фибоначчи
         Console.Write("Введите предел для ряда Фибоначчи: ");
-        int fibonacciLimit = int.Parse(Console.ReadLine());
+        int fibonacciLimit = Convert.ToInt32(Console.ReadLine());
 
         Console.WriteLine("Ряд Фибоначчи до " + fibonacciLimit + ":");
         FibonacciLimit(fibonacciLimit);
@@ -27,7 +27,7 @@ class Program
 
         //ввод количества чисел для ряда Фибоначчи
         Console.Write("Введите количество чисел для ряда Фибоначчи: ");
-        int fibonacciCount = int.Parse(Console.ReadLine());
+        int fibonacciCount = Convert.ToInt32(Console.ReadLine());
 
         Console.WriteLine("Результат " + fibonacciCount);
         FibonacciCount(fibonacciCount);
