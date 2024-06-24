@@ -124,7 +124,7 @@ namespace Homework_1
             //Шахматная доска (вариант 1)
             Console.WriteLine("Шахматная доска (вариант 1):");
             Console.Write("Введите размер доски: ");
-            int size = int.Parse(Console.ReadLine());
+            int size = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine(" ");
 
             for (int i = 0; i < size; i++)
@@ -148,7 +148,7 @@ namespace Homework_1
             //Шахматная доска (вариант 2)
             Console.WriteLine("Шахматная доска (вариант 2):");
             Console.Write("Введите размер доски: ");
-            size = int.Parse(Console.ReadLine());
+            size = Convert.ToInt32(Console.ReadLine());
             int cellSize = 3;
             Console.WriteLine();
 
