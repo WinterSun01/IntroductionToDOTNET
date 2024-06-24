@@ -12,12 +12,12 @@ class Program
 
         //ввод значения для возведения в степень
         Console.Write("Введите число: ");
-        double baseNum = double.Parse(Console.ReadLine());
+        double number = double.Parse(Console.ReadLine());
 
         Console.Write("Введите показатель степени: ");
-        int exponent = int.Parse(Console.ReadLine());
+        int stepen = int.Parse(Console.ReadLine());
 
-        Console.WriteLine(baseNum + " в степени " + exponent + ": " + Power(baseNum, exponent));
+        Console.WriteLine(number + " в степени " + stepen + ": " + Power(number, stepen));
 
         //ввод предела для ряда Фибоначчи
         Console.Write("Введите предел для ряда Фибоначчи: ");
