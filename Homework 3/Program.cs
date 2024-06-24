@@ -54,6 +54,7 @@ class Program
             return number * Power(number, stepen - 1);
         else
             return 1 / Power(number, -stepen);
+        
     }
 
     //метод для вывода ряда Фибоначчи до указанного предела
