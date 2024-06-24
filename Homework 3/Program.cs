@@ -11,13 +11,11 @@ class Program
         Console.WriteLine("Факториал " + factorialInput + ": " + Factorial(factorialInput));
 
         //ввод значения для возведения в степень
-        Console.Write("Введите число: ");
-        double number = double.Parse(Console.ReadLine());
-
+        Console.Write("Введите основание степени: ");
+        int a = Convert.ToInt32(Console.ReadLine());
         Console.Write("Введите показатель степени: ");
-        int stepen = int.Parse(Console.ReadLine());
-
-        Console.WriteLine(number + " в степени " + stepen + ": " + Power(number, stepen));
+        int n = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine(a+ " в степени " + n + ": " + Power(a, n));
 
         //ввод предела для ряда Фибоначчи
         Console.Write("Введите предел для ряда Фибоначчи: ");
@@ -37,7 +35,7 @@ class Program
     }
 
     //метод для вычисления факториала
-    public static int Factorial(int n)
+    static int Factorial(int n)
     {
         if (n <= 1)
             return 1;
@@ -46,19 +44,13 @@ class Program
     }
 
     //метод для возведения числа в указанную степень
-    public static double Power(double number, int stepen)
+    static double Power(double a, int n)
     {
-        if (stepen == 0)
-            return 1;
-        else if (stepen > 0)
-            return number * Power(number, stepen - 1);
-        else
-            return 1 / Power(number, -stepen);
-        
+        return n == 0 ? 1 : n > 0 ? a * Power(a, n - 1) : 1 / Power(a, -n);
     }
 
     //метод для вывода ряда Фибоначчи до указанного предела
-    public static void FibonacciLimit(int limit)
+    static void FibonacciLimit(int limit)
     {
         void Calculations(int a, int b)
         {
@@ -72,7 +64,7 @@ class Program
     }
 
     //метод для вывода указанного количества чисел из ряда Фибоначчи
-    public static void FibonacciCount(int count)
+    static void FibonacciCount(int count)
     {
         void Calculations(int a, int b, int remaining)
         {
