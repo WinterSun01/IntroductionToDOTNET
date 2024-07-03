@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{EFFA060F-043A-4A0E-9C14-5CFF450B760E}</ProjectGuid>
+    <ProjectGuid>{59A76135-EAE0-4260-8BBE-7939A3891420}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Arrays</RootNamespace>
-    <AssemblyName>Arrays</AssemblyName>
+    <RootNamespace>Homework_6</RootNamespace>
+    <AssemblyName>Homework 6</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
