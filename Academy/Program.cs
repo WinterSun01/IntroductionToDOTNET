@@ -46,12 +46,7 @@ namespace Academy
 			Console.WriteLine(teacher);
 			Console.WriteLine(delimiter); 
 #endif
-            //	Polymorphism:Generalization/Specialization
 
-            //object[] arr = new object[] { 123, '@', true, 3.14 };
-            //foreach (object i in arr) Console.Write(i + "\t"); Console.WriteLine();
-
-            //Generalization:
             Human[] group = new Human[]
                 {
                     new Student("Pinkman", "Jessie", 22, "Chemistry", "WW_220", 95, 97),
@@ -61,21 +56,31 @@ namespace Academy
                     new Teacher("Diaz", "Ricardo", 50, "Weapons distribution", 20)
                 };
 
-            //Specialization:
-            for (int i = 0; i < group.Length; i++)
-            {
-                Console.WriteLine(group[i].ToString());
-                Console.WriteLine(delimiter);
-            }
+            Print(group);
+            Save(group, "group.txt");
 
-            StreamWriter writer = new StreamWriter("group.txt");    //Создаем и открываем поток
-            for (int i = 0; i < group.Length; i++)
-            {
-                writer.WriteLine(group[i]);
-            }
-            writer.Close();
             string cmd = "group.txt";
             System.Diagnostics.Process.Start("notepad", cmd);
         }
+            static void Print(Human[] group)
+            {
+                for (int i = 0; i < group.Length; i++)
+                {
+                    Console.WriteLine(group[i].ToString());
+                    Console.WriteLine(delimiter);
+                }
+            }
+
+        static void Save(Human[] group, string filename)
+        {
+            using (StreamWriter writer = new StreamWriter(filename))
+            {
+                for (int i = 0; i < group.Length; i++)
+                {
+                    writer.WriteLine(group[i]);
+                }
+            }
+        }
     }
+
 }
