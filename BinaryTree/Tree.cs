@@ -1,4 +1,6 @@
-﻿using System;
+﻿#undef DEBUG
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +8,8 @@ using System.Threading.Tasks;
 
 namespace BinaryTree
 {
-    class Tree
+    class Tree : IEnumerator, IEnumerable
+    
     {
         public class Element
         {
@@ -18,11 +21,15 @@ namespace BinaryTree
                 this.Data = Data;
                 this.pLeft = pLeft;
                 this.pRight = pRight;
+#if DEBUG
 				Console.WriteLine($"EConstructor:\t{GetHashCode()}"); 
+#endif
             }
             ~Element()
             {
+#if DEBUG
 				Console.WriteLine($"EDestructor:\t{GetHashCode()}"); 
+#endif
             }
         }
         public Element Root;
@@ -34,6 +41,28 @@ namespace BinaryTree
         {
             Console.WriteLine($"TDestructor:\t{GetHashCode()}");
         }
+        public void Add(int Data)
+        {
+            Insert(Data, Root);
+        }
+        public IEnumerator GetEnumerator()
+        {
+            return this;
+        }
+        
+        public object Current
+        {
+            get => Root.Data;
+        }
+        public bool MoveNext()
+        {
+            return true;
+        }
+        public void Reset()
+        {
+
+        }
+        
         public void Insert(int Data)
         {
             Insert(Data, Root);
@@ -92,6 +121,21 @@ namespace BinaryTree
         public double Avg()
         {
             return (double)Sum(Root) / Count(Root);
+        }
+        public int Depth()
+        {
+            return Depth(Root);
+        }
+        public int Depth(Element Root)
+        {
+            if (Root == null) return 0;
+            //else return
+            //		Depth(Root.pLeft) + 1 > Depth(Root.pRight) + 1 ?
+            //		Depth(Root.pLeft) + 1 :
+            //		Depth(Root.pRight) + 1;
+            int lDepth = Depth(Root.pLeft) + 1;
+            int rDepth = Depth(Root.pRight) + 1;
+            return Math.Max(lDepth, rDepth);
         }
 
         public void Print()
